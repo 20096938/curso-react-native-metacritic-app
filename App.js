@@ -6,7 +6,11 @@ import icon from './assets/icon.png';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={icon} style={{ width: 100, height: 100 }} />
+      <Image source={icon} style={{
+         width: 200,
+          height: 100,
+          resizeMode: 'center',
+           }} />
       <StatusBar style="auto" />
       <Text>Hola a todos en el mundo</Text>
     </View>
