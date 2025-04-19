@@ -1,21 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TouchableHighlight } from 'react-native';
-
-
+import { useEffect, useState } from 'react';  4.2 (gzipped: 1.8k)
+import { StyleSheet, Text, View,  } from 'react-native';
+import { getlatestGames } from './lib/metacritic';
 
 export default function App() {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    getlatestGames().then((games) => {
+      setGames(games);
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-     
-      <TouchableHighlight
-      underlayColor={"#09f"}
-      onPress={() => alert('presionaste el boton')}
-      style={{ width: 200, height: 200, backgroundColor: 'red', borderRadius: 100,
-       alignItems: 'center', justifyContent: 'center' }}
-      >
-        <Text style={{ color: 'white' }}>soy un pinche boton</Text>
-      </TouchableHighlight>
+
+      {games.map((game) => 
+        <View key={game.slug} style={styles.card}> 
+        <image
+     <image 
+       source={{ uri: game.image }}
+       style={{width: 107, height: 147, borderRadius: 10, }}
+      />
     </View>
   );
 }
