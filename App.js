@@ -9,9 +9,10 @@ export default function App() {
       <StatusBar style="light" />
      
       <TouchableHighlight
-      underlayColor={"#o9f"}
+      underlayColor={"#09f"}
       onPress={() => alert('presionastes el boton')}
-      style={{ width: 200, height: 200, backgroundColor: 'red', }}
+      style={{ width: 200, height: 200, backgroundColor: 'red', borderRadius: 100,
+       alignItems: 'center', justifyContent: 'center' }}
       >
         <Text style={{ color: 'white' }}>soy un pinche boton</Text>
       </TouchableHighlight>
